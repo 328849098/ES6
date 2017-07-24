@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{width:200px;height:200px;background:#ccc;}
+    </style>
+</head>
+<script>
+/*
+之前：function show(){}
+------------------------
+箭头函数：=>
+
+    注意：
+        this问题，this指向window
+        arguments不能使用了
+    
+*/
+function show() {
+    console.log(arguments);
+}
+show(1,2,3);   //[1, 2, 3]
+
+var show2()=> {
+    console.log(arguments);
+}
+show2(1,2,3);   //error
+</script>
+<body>
+<div id="box"></div>
+</body>
+</html>

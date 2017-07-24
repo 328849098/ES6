@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<script>
+/*
+ Generator--生成器
+    是一个函数
+    可以遍历，Generator就是一个状态机
+
+    value 每次yield后面的值
+    done 代表是否遍历结束
+
+    yield语句本身没有返回值，或者每次返回undefined
+ */
+
+function *show() {   //Generator函数
+    alert(777);
+    yield 12;
+    alert(555);
+}
+
+var res=show();
+
+console.log(res.next());   //Object {value: 12, done: false}
+console.log(res.next());   //Object {value: undefined, done: true}
+
+</script>
+<body>
+
+</body>
+</html>

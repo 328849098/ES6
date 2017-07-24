@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+/*
+面向对象:
+之前
+*/
+function Person(name,age) {  //类、构造函数
+    this.name=name;
+    this.age=age;
+}
+Person.prototype.showName=function () {
+    return this.name;
+};
+Person.prototype.showAge=function () {
+    return this.age;
+};
+
+var p1=new Person('guo',18);
+alert(p1.showName());    //guo
+</script>
+<body>
+</body>
+</html>

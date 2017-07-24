@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+/*
+Map对象：
+    和json相似
+    和for of循环配合而生,不能使用for in
+--------------------------------------
+for of 循环
+    for(var name of map){}
+    for(var [key,value] of map){}
+    for(var name of map.entries()){}  //全写
+    for(var key of map.keys()){}      //键
+    for(var value of map.values()){}  //值
+*/
+
+var map=new Map();
+
+//设置
+map.set('a','apple');
+map.set('b','banner');
+
+console.log(map);   //Map {"a" => "apple", "b" => "banner"}
+
+//获取
+alert(map.get('a'));  //apple
+
+//删除
+//delete map.a;      //删除json的办法
+map.delete('a');    //Map {"b" => "banner"}
+console.log(map);
+</script>
+<body>
+
+</body>
+</html>

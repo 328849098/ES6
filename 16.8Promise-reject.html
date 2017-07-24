@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<script>
+/*
+ Promise：
+ Promise.reject -- 生成错误的Promise
+ */
+
+Promise.reject('这是一个错误的信息').then(function (value) {
+    console.log(value);
+},function (value) {
+    console.log(value);    //这是一个错误的信息
+});
+
+</script>
+<body>
+
+</body>
+</html>

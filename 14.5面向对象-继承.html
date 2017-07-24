@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+/*
+面向对象:
+继承：
+    之前：子类.prototype=new 父类();
+    ES6:
+*/
+
+function Person(name,age) {  //类、构造函数
+    this.name=name;
+    this.age=age;
+}
+Person.prototype.showName=function () {
+    return this.name;
+};
+Person.prototype.showAge=function () {
+    return this.age;
+};
+
+//Worker
+function Worker(name,age) {      //继承
+    Person.apply(this.arguments);
+}
+Worker.prototype=new Person();   //方法继承
+
+var p1=new Person('guo',18);
+var w1=new Person('han',9);
+//alert(p1.showName());    //guo
+alert(w1.showName());      //han
+
+</script>
+<body>
+</body>
+</html>

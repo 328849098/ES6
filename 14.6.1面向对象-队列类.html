@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+/*
+面向对象:
+应用
+队列类：
+    删除
+*/
+
+
+//类
+class Queue {
+    constructor(content=[]){    //构造函数
+        this._queue=[...content];
+    }
+    shift(){
+        const value=this._queue[0];
+        this._queue.shift();
+        return value;
+    }
+}
+
+var q=new Queue([1,2,3,4]);
+q.shift();
+console.log(q._queue);     //[2, 3, 4]
+
+</script>
+<body>
+</body>
+</html>

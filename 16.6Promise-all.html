@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<script>
+/*
+Promise：
+    all -- 全部。用于将多个promise对象，组合，包装成一个全新的promise实例
+        Promise.all([p1,p2,p3,...]);
+        所有的Promise对象，都正确，才走成功
+        否则，只要有一个错误，是失败了
+*/
+
+var p1=Promise.resolve(3);
+var p2=Promise.reject(5);
+
+Promise.all([true,p1,p2]).then(function (value) {
+    console.log('成功了,'+value);    //成功了,true,3
+},function (value) {
+    console.log('失败了,'+value);    //失败了,5
+});
+
+</script>
+<body>
+</body>
+</html>

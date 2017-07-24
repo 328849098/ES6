@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .on{color:#fff;background:#f60;}
+    .box div{width:200px;height:200px;border:1px solid #000;display:none;}
+
+</style>
+<script>
+/*
+面向对象:
+应用
+    选项卡
+*/
+
+
+//类
+class Tab {
+    constructor(id){      //构造函数    创建
+        this.oBox=document.getElementById(id);
+        this.aBtn=this.oBox.getElementsByTagName('input');
+        this.aDiv=this.oBox.getElementsByTagName('div');
+        this.init();
+    }
+    init(){                                 //
+        for(let i=0;i<this.aBtn.length;i++){
+            this.aBtn[i].onclick=function () {
+                //alert(i);     //0    1    2
+                //alert(this);    //不加bind，this指向input按钮。  加bind，指向object。
+                this.hide();
+                this.show(i);
+            }.bind(this);   //矫正this指向
+        }
+    }
+    hide(){
+        for(let i=0;i<this.aBtn.length;i++){
+            this.aBtn[i].className='';
+            this.aDiv[i].style.display='none';
+        }
+    }
+    show(index){
+        this.aBtn[index].className='on';
+        this.aDiv[index].style.display='block';
+    }
+}
+
+window.onload=function () {
+    new Tab('box');
+    new Tab('box2');
+}
+</script>
+<body>
+<div id="box" class="box">
+    <input type="button" value="aaa" class="on">
+    <input type="button" value="bbb">
+    <input type="button" value="ccc">
+    <div style="display:block;">111</div>
+    <div>222</div>
+    <div>333</div>
+</div>
+<div id="box2" class="box">
+    <input type="button" value="aaa" class="on">
+    <input type="button" value="bbb">
+    <input type="button" value="ccc">
+    <div style="display:block;">111</div>
+    <div>222</div>
+    <div>333</div>
+</div>
+</body>
+</html>

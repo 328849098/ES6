@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<script src="js/ajax.js"></script>
+<script>
+/*
+Promise：
+*/
+
+window.onload=function () {
+    var oBtn=document.getElementById('btn1');
+    oBtn.onclick=function () {
+        ajax('txt/a.txt',function (str) {
+            alert(str);
+        },function (str) {
+            alert(str);
+        });
+    }
+}
+</script>
+<body>
+<input type="button" value="aaa" id="btn1">
+</body>
+</html>

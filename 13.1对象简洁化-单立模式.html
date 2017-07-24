@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+/*
+单立模式：
+
+*/
+
+/*错误
+var person={
+    name:'guo',
+    age:18,
+    showName: ()=> {
+        alert(this.name);
+    },
+    showAge: ()=> {
+        alert(this.age);
+    }
+}
+person.showName();   //空
+*/
+
+//单立模式
+var name='guo';
+var age=18;
+var person={
+        name,
+        age,
+        showName() {
+            alert(this.name);
+        },
+        showAge() {
+            alert(this.age);
+        }
+}
+person.showName();   //guo
+</script>
+<body>
+</body>
+</html>

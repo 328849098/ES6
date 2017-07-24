@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+/*
+封闭空间
+*/
+window.onload=function () {
+    var aBtn=document.getElementsByTagName('input');
+    for(var i=0;i<aBtn.length;i++){
+        (function (i) {
+            aBtn[i].onclick=function () {
+                alert(i);   //0,1,2
+            }
+        })(i);
+    }
+}
+</script>
+<body>
+<input type="button" value="aaa">
+<input type="button" value="bbb">
+<input type="button" value="ccc">
+</body>
+</html>

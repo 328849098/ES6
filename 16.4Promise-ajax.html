@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<script src="js/ajax.js"></script>
+<script>
+/*
+Promise：
+*/
+
+window.onload=function () {
+    let oBtn=document.getElementById('btn1');
+    let oBox=document.getElementById('box1');
+    oBtn.onclick=function () {
+        let p1=new Promise(function (resolve,rejected) {
+            ajax('txt/a.txt',function (str) {
+                resolve(str);
+            },function (str) {
+                rejected(str);
+            });
+        });
+
+        p1.then(function (value) {
+            oBox.innerHTML=value;
+        },function (value) {
+            oBox.innerHTML=value;
+        });
+
+    }
+}
+</script>
+<body>
+<input type="button" value="aaa" id="btn1">
+<div id="box1"></div>
+</body>
+</html>

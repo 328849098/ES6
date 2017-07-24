@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+/*
+ arguments不能push
+ ...可以push
+*/
+
+function show(...args) {
+    args.push(5);    //error
+    console.log(args);
+}
+show(1,2,3,4);   //[1, 2, 3, 4, 5]
+</script>
+<body>
+
+</body>
+</html>

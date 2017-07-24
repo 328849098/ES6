@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<script>
+/*
+异步：多个操作可以同时进行。如ajax(url,fnSucc,fnFail)。
+
+Promise：-- 承诺
+    就是一个对象，传递异步操作的数据。
+    pending(等待、处理中)  -> Resolve(完成、fullFilled、成功)
+    pending(等待、处理中)  -> Rejected(拒绝、失败)
+    -------------------------------------------
+
+    var p1=new Promise(function (resolve,rejected) {
+        if(异步处理成功了){
+            resolve(成功数据);
+        }else{
+            rejected(失败数据);
+        }
+    });
+
+    p1.then(成功(resolve),失败(rejected));
+ */
+
+var p1=new Promise(function (resolve,rejected) {
+    resolve(1);
+});
+
+p1.then(function (value) {
+    console.log(value);    //1
+    return value+1;
+}).then(function (value) {
+    console.log(value);    //2
+});
+
+</script>
+<body>
+
+</body>
+</html>

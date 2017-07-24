@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{width:200px;height:200px;background:#ccc;}
+    </style>
+</head>
+<script>
+/*
+之前：function show(){}
+------------------------
+箭头函数：=>
+
+    注意：
+        this问题，this指向window
+*/
+var a=101;
+var json={
+    a:1,
+    b:2,
+    show:()=>{
+        alert(this.a);
+    }
+};
+json.show();   //101
+</script>
+<body>
+<div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<script>
+/*
+ Promise：
+ Promise.race --返回也是一个Promise对象
+    最先能执行的Promise结果，哪个最快用哪个。
+ */
+var p1=new Promise(function (resolve,rejected) {
+    setTimeout(resolve,500,'one');
+});
+var p2=new Promise(function (resolve,rejected) {
+    setTimeout(resolve,100,'two');
+});
+
+Promise.race([p1,p2]).then(function (value) {
+    console.log(value);     //two    100快，500慢
+});
+
+</script>
+<body>
+
+</body>
+</html>

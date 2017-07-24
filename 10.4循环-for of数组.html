@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+/*for of 循环数组，不可以循环json。 主要使用在Map上。
+
+*/
+
+var arr=['红楼梦','三国演义','水浒传','西游记'];
+for(var name of arr){
+    console.log(name);   //红楼梦   三国演义   水浒传   西游记
+}
+
+for(var name of arr.entries()){
+    console.log(name);   //0,红楼梦   1,三国演义   2,水浒传   3,西游记
+}
+
+for(var key of arr.keys()){
+    console.log(key);   //0   1   2   3
+}
+</script>
+<body>
+
+</body>
+</html>

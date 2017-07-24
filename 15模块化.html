@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+<script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+<script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+<script type="module">
+/*
+模块化：
+    之前：seajs  requireJs
+    -------------------------------------------
+    ES6自带模块化:
+
+    如何定义（导出）模块:
+    导出一个: export default a;
+    导出多个: export default {a,b};
+
+    如何引用:    import modA from 'a.js';
+*/
+
+import modA from 'js/a.js';
+console.log(modA);   //12    error:找不到 import。意味着浏览器不能运行ES6的模块化。
+</script>
+<body>
+
+</body>
+</html>

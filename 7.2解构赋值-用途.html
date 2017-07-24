@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+/*
+交互
+weibo：http://open.weibo.com/wiki/2/statuses/home_timeline
+-----------------------
+*/
+
+/*
+ var json={s:[1,2,3],a:'abc'};
+ var {s,a}=json;
+ console.log(s);  //[1, 2, 3]
+ */
+
+var json={
+    "statuses": [
+        {
+            "created_at": "Tue May 31 17:46:55 +0800 2011",
+            "id": 11488058246,
+            "text": "求关注。"
+        }
+    ],
+    "ad": [
+        {
+            "id": 3366614911586452,
+            "mark": "AB21321XDFJJK"
+        }
+    ]
+};
+
+var {statuses,ad}=json;
+console.log(statuses);
+
+
+
+</script>
+<body>
+
+</body>
+</html>

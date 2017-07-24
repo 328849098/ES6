@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+/*
+面向对象:
+应用
+队列类：
+    添加
+*/
+
+
+//类
+class Queue {
+    constructor(content=[]){      //构造函数    创建
+        this._queue=[...content];                    //[1, 2, 3, 4]
+    }
+    shift(){                                 //删除
+        const value=this._queue[0];
+        this._queue.shift();
+        return value;                                //[2, 3, 4]
+    }
+    push(n){                                 //添加
+        this._queue.push(n);
+        return this._queue.length;                   //[2, 3, 4, 5]
+    }
+}
+
+var q=new Queue([1,2,3,4]);
+q.shift();
+q.push(5);
+console.log(q._queue);     //[2, 3, 4, 5]
+
+</script>
+<body>
+</body>
+</html>

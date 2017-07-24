@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<script>
+/*
+ Promise：
+ Promise.resolve() -- 生成一个成功的Promise对象
+     语法：
+         Promise.resolve(value)
+         Promise.resolve(Promise)
+ */
+
+Promise.resolve('这是一个成功的信息').then(function (value) {
+    console.log(value);    //这是一个成功的信息
+},function (value) {
+    console.log(value);
+});
+
+Promise.resolve([1,2,3]).then(function (value) {
+    console.log(value);    //[1, 2, 3]
+    console.log(value[0]); //1
+},function (value) {
+    console.log(value);
+});
+
+
+var p1=Promise.resolve(3);
+var p2=Promise.resolve(p1);
+p2.then(function (value) {
+    console.log(value);    //3
+},function (value) {
+    console.log(value);
+});
+
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+/*
+Map对象：
+    和json相似
+    和for of循环配合而生,不能使用for in
+*/
+
+var map=new Map();
+
+map.set('a','apple');
+map.set('b','banner');
+map.set('c','orange');
+map.set('d','pear');
+
+for(var name of map){
+    console.log(name);   //a,apple  b,banner   c,orange  d,pear
+}
+</script>
+<body>
+
+</body>
+</html>

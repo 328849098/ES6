@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+/*
+面向对象:
+继承：
+    之前：子类.prototype=new 父类();
+    ES6:class 子类 extends 父类{
+             constructor(a,n){    //构造函数
+                super(a);    //超父类。调用父级构造
+             }
+        }
+*/
+
+class Person{     //类
+    constructor(name='undefined',age=0){   //构造函数   默认值
+        this.name=name;
+        this.age=age;
+    }
+    showName() {   //方法
+        return this.name;
+    }
+    showAge() {
+        return this.age;
+    }
+}
+
+//继承
+class Worker extends Person{
+    constructor(name,age,job='扫地的'){    //构造函数
+        super(name,age);    //超父类。重新定义name，age。
+        this.job=job;
+    }
+    showAge(){
+        return this.age;
+    }
+    showJob(){
+        return this.job;
+    }
+}
+
+var w1=new Worker('guo',16);
+//alert(w1.showName());    //guo
+//alert(w1.showAge());     //16
+alert(w1.showJob());     //扫地的
+
+</script>
+<body>
+</body>
+</html>

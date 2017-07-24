@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+/*
+面向对象:
+ES6:
+    类       class
+    构造函数  constructor   生成完实例后，自己就执行
+*/
+
+class Person{     //类
+    constructor(name,age){   //构造函数
+        this.name=name;
+        this.age=age;
+    }
+    showName() {   //方法
+        return this.name;
+    }
+    showAge() {
+        return this.age;
+    }
+}
+
+
+var p1=new Person('guo',18);
+var p2=new Person('han',17);
+//alert(p1.name);    //guo
+//alert(p1.showName());  //guo
+//alert(p2.showName());  //han
+//alert(p2.showName==p1.showName);  //true
+alert(p1.constructor==Person);  //true
+</script>
+<body>
+</body>
+</html>
